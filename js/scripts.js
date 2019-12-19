@@ -1,8 +1,5 @@
 (function($) {
 
-    // Remove no-js class
-    $('html').removeClass('no-js');
-
     // Animate to section when nav is clicked
     $('header a').click(function(e) {
 
@@ -13,7 +10,7 @@
         var heading = $(this).attr('href');
         var scrollDistance = $(heading).offset().top;
 
-        //Go to heading
+        //Go to header
         $('html, body').animate({
             scrollTop: scrollDistance + 'px'
         }, Math.abs(window.pageYOffset - $(heading).offset().top) / 1);
@@ -38,6 +35,8 @@
             scrollTop: scrollDistance + 'px'
         }, 500);
     });
+
+
 
     // Open mobile menu
     $('#mobile-menu-open').click(function() {
