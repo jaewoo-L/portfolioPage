@@ -9,7 +9,7 @@
     var $menu = head.find('#menu li'),
         $contents = $('.contents > div');
 
-    win.scroll(function(){
+    win.scroll($.throttle(1000/15, function(){
         if($(this).scrollTop() >= menuHeight) {
             head.addClass('visible');
         } else {
@@ -23,7 +23,7 @@
                 $menu.eq(idx).removeClass('on');
             }
         });
-    });    
+    }));    
     win.scroll();
     // Animate to section when nav is clicked
     $('header a').click(function(e) {
@@ -69,6 +69,6 @@
         $('header, body').removeClass('active');
     });
 
-    
+
 
 })(jQuery);
