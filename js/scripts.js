@@ -25,6 +25,7 @@
         });
     }));    
     win.scroll();
+
     // Animate to section when nav is clicked
     $('header a').click(function(e) {
         // Treat as normal link if no-scroll class
@@ -39,7 +40,7 @@
         }, Math.abs(window.pageYOffset - $(heading).offset().top) / 1);
 
         // Hide the menu once clicked if mobile
-        if ($('header').hasClass('active')) {
+        if (menuHeader.hasClass('active')) {
             $('header, body').removeClass('active');
         }
     });
