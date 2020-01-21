@@ -7,13 +7,14 @@ body.active{
 }
 
 @keyframes dropHeader{
-	0%{
-		transform:translateY(-100%)
-	}
-	100%{
-		transform:translateY(0)
-	}
+	0% {transform:translateY(-100%)}
+	100% {transform:translateY(0)}
 }
+@keyframes fadeLeftIn{
+	0% {opacity: 0; transform: translateX(-15%);}
+	100% {opacity: 1; transform: translateX(0);}
+}
+@keyframes normal{}
 header{
 	position:absolute;
 	top:0;
@@ -24,7 +25,8 @@ header{
 	animation-name:dropHeader;
 	animation-iteration-count:1;
 	animation-timing-function:ease;
-	animation-duration:0.75s
+	animation-duration:0.75s;
+	transition: top 0.25s;
 }
 header ul{
 	display:inline-block;
@@ -63,11 +65,11 @@ header a:hover:before{
 	width:75%;
 }
 header a:focus{
-	color:#3498db;
 	text-decoration:none
 }
 header.active{
-	display:block
+	display:block;
+	height: 100%
 }
 header.sticky{
 	position:fixed;
@@ -75,6 +77,25 @@ header.sticky{
 }
 #menu.active{
 	display:block
+}
+header.page-header-clone {
+	opacity: 1;
+	visibility: visible;
+	top: -100px;
+	-webkit-transition: top 0.25s;
+	transition: top 0.25s;
+}
+header.page-header-clone.visible {
+	text-align: right;
+	position: fixed;
+	top: 0;
+	right: 50px;
+}
+header.visible ul {
+	padding:5px;
+}
+header #menu li.on a {
+	color: #c03434;
 }
 #mobile-menu-open{
 	display:none;
@@ -440,11 +461,20 @@ footer{
 	border-radius: 5px;
 	font-size:1.1em
 }
-
 #contact{
 	padding:50px 15px;
 	background:#3498db;
-	text-align:center
+	position: relative;
+	text-align:center;
+	height: 550px
+}
+#contact > div {
+	min-width: 500px;
+	max-width: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
 }
 #contact h2{
 	margin:0 0 15px 0;
@@ -542,10 +572,23 @@ footer{
 		position:fixed;
 		display:none;
 		z-index:999;
-		animation:none;
+		animation:normal;
 		bottom:0;
-		height:100%
+		height:0;
 	}
+	header.page-header-clone {
+		opacity: 0;
+		visibility: hidden;
+	}
+	header #menu li {
+		animation: fadeLeftIn 0.3s ease forwards;
+		opacity: 0;
+	}
+	header #menu li:nth-child(1) {animation-delay: 0.03s}
+	header #menu li:nth-child(2) {animation-delay: 0.13s}
+	header #menu li:nth-child(3) {animation-delay: 0.23s}
+	header #menu li:nth-child(4) {animation-delay: 0.33s}
+	header #menu li:nth-child(5) {animation-delay: 0.43s}
 	#mobile-menu-open,#mobile-menu-close{
 		display:block
 	}
@@ -605,6 +648,9 @@ footer{
 	}
 	.projectWrapper .card .imgBox:before {
 		font-size: 2.5em;
+	}
+	#contact > div {
+		min-width:70%;
 	}
 	footer{
 		text-align:center

@@ -12,7 +12,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script defer src="js/scripts.min.js"></script>
+    <script defer src="js/scripts.js"></script>
 </head>
 
 <body>
@@ -43,7 +43,6 @@
         </ul>
     </header>
     <!-- End header -->
-
     <div id="lead">
         <div id="lead-content">
             <h1 data-title="FRONT-END">Front-end</h1>
@@ -63,7 +62,7 @@
         <!-- End #lead-down -->
     </div>
     <!-- End #lead -->
-
+    <div class="contents">
     <div id="about">
         <div class="container">
             <div class="row">
@@ -209,18 +208,21 @@
     <!-- End #skills -->
 
     <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/meqqabgd">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
+        <div>
+            <h2>Get in Touch</h2>
+            <div id="contact-form">
+                <form method="POST" action="https://formspree.io/meqqabgd">
+                    <input type="hidden" name="_subject" value="Contact request from personal website" />
+                    <input type="email" name="_replyto" placeholder="Your email" required>
+                    <textarea name="message" placeholder="Your message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>    
         </div>
         <!-- End #contact-form -->
     </div>
     <!-- End #contact -->
+    </div>
     <footer>
         <div class="container">
             <div class="row">
