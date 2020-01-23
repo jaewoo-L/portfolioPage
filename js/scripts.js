@@ -17,7 +17,7 @@
         }
         $contents.each(function(){
             var idx = $(this).index();
-            if($(this).offset().top <= win.scrollTop() + 1) {
+            if($(this).offset().top <= win.scrollTop() + 300) {
                 $menu.eq(idx).addClass('on').siblings().removeClass('on');
             } else {
                 $menu.eq(idx).removeClass('on');
@@ -42,6 +42,10 @@
         // Hide the menu once clicked if mobile
         if (menuHeader.hasClass('active')) {
             $('header, body').removeClass('active');
+        }
+        if($(this).attr('href') == '#contact') {
+            var last = $menu.length - 1;
+            $menu.eq(last).addClass('on').siblings().removeClass('on');
         }
     });
 

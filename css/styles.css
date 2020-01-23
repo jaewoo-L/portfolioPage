@@ -223,7 +223,7 @@ footer{
 	line-height:0.9em
 }
 #lead-content h3{
-	color:#a0cfee;
+	color:#c3bdff;
 	font-weight:500;
 	font-size:1.5em;
 	margin-bottom:15px
@@ -247,7 +247,7 @@ footer{
 	right:0;
 	bottom:0;
 	left:0;
-	background:rgba(5, 39, 63, 0.8);
+	background:rgba(5, 39, 63, 0.6);
 	z-index:1
 }
 #lead-down{
