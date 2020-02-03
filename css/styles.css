@@ -247,7 +247,7 @@ footer{
 	right:0;
 	bottom:0;
 	left:0;
-	background:rgba(5, 39, 63, 0.6);
+	background:rgba(0, 15, 26, 0.6);
 	z-index:1
 }
 #lead-down{
@@ -356,12 +356,13 @@ footer{
 }
 .projectWrapper .card {
 	position: relative;
+	border-collapse: collapse;
 	height: 300px;
 	background:#fff;
 	display: flex;
 	width:45%;
 	margin: 30px 0;
-	box-shadow: 5px 3px 5px #00000080;
+	box-shadow: 5px 3px 5px rgba(0,0,0,0.5);
 }
 .projectWrapper .card .imgBox {
 	position: absolute;
