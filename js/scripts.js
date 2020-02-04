@@ -8,7 +8,9 @@
         head.appendTo('body');
     var $menu = head.find('#menu li'),
         $contents = $('.contents > div');
-
+    win.load(function(){
+        $('.loading').fadeOut();
+    });
     win.scroll($.throttle(1000/15, function(){
         if($(this).scrollTop() >= menuHeight) {
             head.addClass('visible');
