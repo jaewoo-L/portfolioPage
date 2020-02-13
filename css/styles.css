@@ -379,6 +379,9 @@ footer{
 	overflow: hidden;
 	transition: 0.5s ease-in-out;
 }
+.projectWrapper .card .imgBox img {
+	width:100%;
+}
 .projectWrapper .card:nth-of-type(2) .imgBox img {
 	height: 100%;
 }
